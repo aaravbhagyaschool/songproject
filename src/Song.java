@@ -1,45 +1,52 @@
-public class Song
-{
-  // Private instance variables
-  private String title = "Unknown";
-  private String artist = "Unknown Artist";
+public class Song {
+    // Private instance variables for 10 columns
+    private String artist;
+    private String trackName;
+    private String releaseDate;
+    private String genre;
+    private int length;
+    private double shakeAudience;
+    private double obscene;
+    private double danceability;
+    private double loudness;
+    private String topic;
 
-  // Default constructor
-  public Song(){} 
+    // Constructor to initialize all 10 fields
+    public Song(String artist, String trackName, String releaseDate, String genre, int length,
+                double shakeAudience, double obscene, double danceability, double loudness, String topic) {
+        this.artist = artist;
+        this.trackName = trackName;
+        this.releaseDate = releaseDate;
+        this.genre = genre;
+        this.length = length;
+        this.shakeAudience = shakeAudience;
+        this.obscene = obscene;
+        this.danceability = danceability;
+        this.loudness = loudness;
+        this.topic = topic;
+    }
 
-  // Overloaded constructor
-  public Song(String artist, String title) 
-  {
-    // note usage of this to assign to the instance variables
-    this.artist = artist;
-    this.title = title;
-  }
+    // Getters (not all shown for brevity)
+    public String getArtist() {
+        return artist;
+    }
 
-  // toString for printing the object
-  public String toString()
-  {
-    return artist + " - " + title;
-  }
-  
-  // Getters for getting private instance variables
-  public String getTitle()
-  {
-    return title;
-  }
-  
-  public String getArtist()
-  {
-    return artist;
-  }
-  
-  // Setters to update instance variables
-  public void setTitle(String title)
-  {
-      this.title = title;
-  }
-  
-  public void setArtist(String artist)
-  {
-    this.artist = artist;
-  }
+    public String getTrackName() {
+        return trackName;
+    }
+
+    // Setters (not all shown for brevity)
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public void setTrackName(String trackName) {
+        this.trackName = trackName;
+    }
+
+    // toString method for printing song details
+    @Override
+    public String toString() {
+        return artist + " - " + trackName + " (" + releaseDate + "), Genre: " + genre + ", Length: " + length + "s";
+    }
 }
